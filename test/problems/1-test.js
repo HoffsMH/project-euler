@@ -4,8 +4,8 @@ import {
   allNumbersDivisible,
 } from '../../problems/1';
 
-describe('Problem 1', function() {
-  describe('#solution()', function() {
+describe('Problem 1', () => {
+  describe('#solution()', () => {
     context('when given no arguments', () => {
       const args = undefined;
       it('should return the solution to the project euler default question', () => {

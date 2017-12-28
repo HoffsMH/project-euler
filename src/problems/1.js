@@ -22,7 +22,7 @@ export function allNumbersDivisible(args) {
   return validateArgsThen(sumAllDivisibles, args)
 }
 
-export function sumAllDivisibles({ max, sum = 0, divArr }) {
+function sumAllDivisibles({ max, sum = 0, divArr }) {
   const num = max - 1
   if (!num) return sum;
 
