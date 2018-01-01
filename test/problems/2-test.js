@@ -2,14 +2,14 @@ import assert from 'assert';
 import {
   default as solution,
   sumOfAllEvenFibs,
-} from '../../problems/1';
+} from '../../problems/2';
 
 describe('Problem 2', () => {
   describe('#solution()', () => {
     context('when given no arguments', () => {
       const args = undefined;
       it('returns the anser to the default euler question', () => {
-        assert.equal(solution(args), 233168,
+        assert.equal(solution(args), 4613732,
           'returns correct answer');
       });
     });
@@ -24,6 +24,26 @@ describe('Problem 2', () => {
           'throws an invalid argument error'
         )
       })
+    });
+
+    context('when given valid arguments', () => {
+      const args = { max: 2342 };
+
+      it('returns the correct answer', () => {
+        assert.equal(solution(args), 3382,
+          'correct answer is given')
+      })
+    });
+  });
+
+  describe('#sumOfAllEvenFibs()', () => {
+    context('when given valid arguments', () => {
+      const args = { max: 2342 };
+
+      it('returns the correct answer', () => {
+        assert.equal(solution(args), 3382,
+          'correct answer is given')
+      });
     });
   });
 });
