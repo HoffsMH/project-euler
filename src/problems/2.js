@@ -11,7 +11,7 @@ import validateArgs from '../common/validate-args';
 
 // for purposes of problem assuming 4m
 
-const validateArgsThen = validateArgs((args) => {
+  const validateAndExec = validateArgs((args) => {
   return (
     args &&
     typeof args === 'object' &&
@@ -26,7 +26,7 @@ export default function solution(args = { max: 4000000 }) {
 };
 
 export function sumOfAllEvenFibs(args) {
-  return validateArgsThen(_sumOfAllEvenFibs, args)
+  return validateAndExec(_sumOfAllEvenFibs, args)
 }
 
 function _sumOfAllEvenFibs(args) {

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "yarn build && mocha dist/test --recursive --harmony",
     "build": "rm -rf dist/ && babel src -d dist && babel test -d dist/test",
-    "demo": "node --harmony --use-strict dist/problems/index.js",
+    "demo": "yarn build && node --harmony --use-strict dist/problems/index.js",
     "start": "yarn build && yarn demo"
   },
   "keywords": [],
