@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d dist",
-    "start": "node dist/index.js",
-    "go": "yarn build && yarn start"
+    "test": "yarn build && mocha dist/test --recursive --harmony",
+    "build": "rm -rf dist/ && babel src -d dist && babel test -d dist/test",
+    "demo": "yarn build && node --harmony --use-strict dist/problems/index.js",
+    "start": "yarn build && yarn demo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "rollup": "^0.53.0"
   }
 }
