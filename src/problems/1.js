@@ -4,21 +4,12 @@ import validateArgs from '../common/validate-args';
 // we get 3, 5, 6 and 9. The sum of these multiples is 23.
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-const validateAndExec = validateArgs((args) => {
-  return (
-    args && 
-    typeof args === 'object' && 
-    args.divArr && 
-    args.max
-  );
-});
-
 export default function solution(args = { max: 1000, divArr: [3, 5] }) {
   return allNumbersDivisible(args);
 }
 
 export function allNumbersDivisible(args) {
-  return validateAndExec(sumAllDivisibles)(args)
+  return validateAndExecute(sumAllDivisibles)(args)
 }
 
 function sumAllDivisibles({ max, sum = 0, divArr }) {
@@ -52,3 +43,13 @@ function find(arr, check, index = 0) {
 
   return find(arr, check, index + 1);
 }
+
+// validations 
+const validateAndExecute = validateArgs((args) => {
+  return (
+    args && 
+    typeof args === 'object' && 
+    args.divArr && 
+    args.max
+  );
+});

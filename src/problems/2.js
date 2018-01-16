@@ -10,16 +10,6 @@ import validateArgs from '../common/validate-args';
 
 // for purposes of problem assuming 4m
 
-  const validateAndExec = validateArgs((args) => {
-  return (
-    args &&
-    typeof args === 'object' &&
-    args.max &&
-    typeof args.max === 'number' &&
-    args.max > 1
-  );
-});
-
 export default function solution(args = { max: 4000000 }) {
   return sumOfAllEvenFibs(args);
 };
@@ -69,7 +59,17 @@ function updateCurrentAndPrevious(args) {
   };
 }
 
-
 function isEven(num) {
   return num % 2 === 0;
 }
+
+// validations
+const validateAndExec = validateArgs((args) => {
+  return (
+    args &&
+    typeof args === 'object' &&
+    args.max &&
+    typeof args.max === 'number' &&
+    args.max > 1
+  );
+});

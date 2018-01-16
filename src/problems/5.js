@@ -3,19 +3,6 @@ import validateArgs from '../common/validate-args';
 // 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder .
 // What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-const validateAndExec = validateArgs((args) => {
-  return (
-    args &&
-    typeof args === 'object' &&
-    args.max &&
-    typeof args.max === 'number' &&
-    args.max > 1 &&
-    args.min &&
-    typeof args.min === 'number' &&
-    args.min < args.max
-  );
-});
-
 export default function solution(args = { min: 1, max :23 }) {
   return getLeastCommonMultiple(args);
 };
@@ -42,3 +29,17 @@ function greatestCommonDivisor(a, b) {
 function leastCommonMultiple(a, b) {
   return (a * b) / greatestCommonDivisor(a, b);
 }
+
+// validations
+const validateAndExec = validateArgs((args) => {
+  return (
+    args &&
+    typeof args === 'object' &&
+    args.max &&
+    typeof args.max === 'number' &&
+    args.max > 1 &&
+    args.min &&
+    typeof args.min === 'number' &&
+    args.min < args.max
+  );
+});
