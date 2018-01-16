@@ -15,13 +15,13 @@ describe('Problem 5', () => {
       });
     });
 
-    // context('when given really large arguments', () => {
-    //   const args = undefined;
+    context('when given really large arguments', () => {
+      const args = { min: 1, max: 40 };
 
-    //   it('returns the correct answer after sometime', () => {
-    //     assert.skip(solution(args), 232792560,
-    //       'after alot of time yields the correct answer')
-    //   });
-    // });
+      it('returns the correct answer after sometime', () => {
+        assert.equal(solution(args), 5342931457063200,
+          'after alot of time yields the correct answer')
+      });
+    });
   });
 });
